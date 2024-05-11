@@ -1,0 +1,7 @@
+{
+    "threat_modeling-L1": {
+        "collector": {
+            "url": "https://example.edu/"
+        }
+    }
+}

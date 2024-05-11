@@ -1,0 +1,7 @@
+{
+    "items": {
+        "APP-1": {
+            "include": "example/items/APP-1.json"
+        }
+    }
+}

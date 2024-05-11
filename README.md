@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 ## Example
 ```shell
-python main.py ./example/config.yaml
+python src/metricvisualizer.py example/config.json
 ```
 
 ## Additions
