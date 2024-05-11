@@ -1,0 +1,8 @@
+{
+    "type": "http",
+    "url": "example.com",
+    "verify": false,
+    "headers": {
+        "Cookie": "test-cookie"
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "threat_modelling-L1": {
+        "include": "example/metrics/threatModel/threatModel-L1.json"
+    }
+}

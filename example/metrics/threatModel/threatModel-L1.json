@@ -1,0 +1,17 @@
+{
+    "level": "1",
+    "collector": {
+        "include": "example/collector/http-collector.json"
+    },
+    "validator": [
+        {
+            "result": "pass"
+            , "prio": 2
+            , "str:title": ".*"
+            , "date:date": "P1Y"
+        }
+    ],
+    "aggregator": {
+        "count": 1
+    }
+}
