@@ -1,5 +1,12 @@
 import util
 import json
+import collector.generator
+import collector.http
+import collector.jira
+import serializer.json
+import serializer.mysql
+import validator.document
+import aggregator.sorter
 
 DEFAULT_ERROR = { 'result': 'error' }
 
@@ -38,42 +45,33 @@ def main(config: dict):
 def collect(config: dict):
     result = {}
     if config['type'] == 'generator':
-        #result = collector.generator.run(config)
-        print("generator collector")
+        result = collector.generator.run(config)
     if config['type'] == 'http':
-        print(config)
-        #result = collector.http.run(config)
-        print("http collector")
+        result = collector.http.run(config)
     if config['type'] == 'jira':
-        #result = collector.jira.run(config)
-        print("jira collector")
+        result = collector.jira.run(config)
     return result
 
  
 
 def validate(config: list, element: dict):
     result = element.copy()
-    #result.update(validator.document.run(config, element))
-    print("validator")
+    result.update(validator.document.run(config, element))
     return result
 
  
 
 def aggregate(config: dict, validations: list):
-    #result = aggregator.sorter.run(config, validations)$
-    result=[]
-    print("aggregator")
+    result = aggregator.sorter.run(config, validations)
     return result
 
  
 
 def serialize(config: dict, results: list):
     if config['type'] == 'json':
-        #serializer.json.run(config, results)
-        print("json serializer")
+        serializer.json.run(config, results)
     if config['type'] == 'mysql':
-        #serializer.mysql.run(config, results)
-        print("mysql serializer")
+        serializer.mysql.run(config, results)
 
 
 if __name__ == '__main__':

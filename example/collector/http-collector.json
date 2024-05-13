@@ -1,6 +1,6 @@
 {
     "type": "http",
-    "url": "example.com",
+    "url": "https://example.edu/",
     "verify": false,
     "headers": {
         "Cookie": "test-cookie"

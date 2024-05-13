@@ -6,5 +6,11 @@
     },
     "metrics": {
         "include": "example/metrics/metrics.json"
+    },
+    "serializer": {
+        "type": "mysql",
+        "host": "localhost",
+        "database": "caveDB",
+        "include": "example/auth-mysql.json"
     }
 }
