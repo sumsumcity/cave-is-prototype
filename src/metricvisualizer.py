@@ -41,6 +41,7 @@ def collect(config: dict):
         #result = collector.generator.run(config)
         print("generator collector")
     if config['type'] == 'http':
+        print(config)
         #result = collector.http.run(config)
         print("http collector")
     if config['type'] == 'jira':
@@ -80,5 +81,5 @@ if __name__ == '__main__':
     param = sys.argv[1]
     config = util.loadConfig(param)
 
-    print(json.dumps(config, indent = 2))
-    #main(config)
+    #print(json.dumps(config, indent = 2))
+    main(config)
