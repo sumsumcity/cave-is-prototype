@@ -1,6 +1,6 @@
 import env
 import re
-import isodate
+import isodate # type: ignore
 
 DEFAULT_FAIL = { "result": "fail" }
 

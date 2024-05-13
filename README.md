@@ -49,3 +49,13 @@ To delete **all** docker volumes to reset everything (even the passwords):
 ```shell
 docker volume rm $(docker volume ls -q)
 ``` 
+
+Example for Grafana Dashboard:
+```shell
+SELECT im.*, i.appid, m.name, concat(status, ": ", description) AS detail
+FROM items_metrics AS im
+JOIN items AS i ON i.itemid = im.itemid
+JOIN metrics AS m ON m.metricid = im.metricid
+-- WHERE i.type = "app"
+-- WHERE date = (SELECT MAX(date) FROM items_metrics)
+``` 

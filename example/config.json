@@ -9,8 +9,9 @@
     },
     "serializer": {
         "type": "mysql",
-        "host": "localhost",
+        "host": "127.0.0.1",
         "database": "caveDB",
+        "port": 3306,
         "include": "example/auth-mysql.json"
     }
 }
