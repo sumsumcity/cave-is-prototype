@@ -34,7 +34,7 @@ def main(config: dict):
                 stageresult = aggregate(stageconfig, stageresult)
             except Exception as e:
                 stageresult.update(DEFAULT_ERROR)
-                stageresult['title'] = f'{type(e).__name__}: {e}'
+                stageresult['title'] = f'{type(e).__name__} in {stage} stage: {e}'
 
             stageresult['item'] = itemid
             stageresult['metric'] = metricid

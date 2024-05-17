@@ -1,5 +1,6 @@
 import requests
 import util
+import json
 
 ENDPOINT_SEARCH = '/rest/api/2/search'
 
@@ -18,7 +19,7 @@ def run(config: dict):
 
     for issue in response['issues']:
         newissue = { 'type': 'jira', 'title': '', 'issue': {} }
-        newissue['title'] = issue['summary']
+        newissue['title'] = issue["fields"]['summary']
         newissue['issue']['id'] = issue['id']
         newissue['issue']['key'] = issue['key']
 
