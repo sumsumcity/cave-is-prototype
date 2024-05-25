@@ -1,9 +1,20 @@
 import json
+from dotenv import load_dotenv # type: ignore
+import os
 
 def loadConfig(file: str):
     result = {'include': file}
     dictmap(result, processincludes)
+    result = loadEnv(result)
     return result
+
+def loadEnv(file: dict) -> dict:
+    jsonstr = json.dumps(file)
+    load_dotenv()
+    jsonstr = jsonstr.replace("${MYSQL_PASSWORD}", os.getenv("MYSQL_PASSWORD"))
+    file = json.loads(jsonstr)
+    return file
+
 
 def loadJson(file: str) -> dict:
     with open(file) as f:

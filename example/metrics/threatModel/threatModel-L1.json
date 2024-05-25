@@ -5,10 +5,16 @@
     },
     "validator": [
         {
-            "result": "pass"
-            , "prio": 2
-            , "str:title": ".*"
-            , "date:date": "P1Y"
+            "result": "pass",
+            "prio": 2,
+            "description": "There is a threat model",
+            "str:title": ".*",
+            "date:date": "P1Y"
+        },
+        {
+            "result": "fail",
+            "prio": 10,
+            "description": "No threat model"
         }
     ],
     "aggregator": {

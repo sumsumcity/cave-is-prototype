@@ -10,7 +10,7 @@ def run(config: dict, data: list):
         runonce(cursor, dbh, rd, item)
 
 def runonce(cursor, dbh, rd: str, item: dict):
-    cursor.execute("""INSERT INTO results (date, itemid, metricid, status, description) VALUES (%s, %s, %s, %s, %s, %s)""", rd, rd, item['item'], item['metric'], item['result'], item.get('title', ''))
+    cursor.execute("""INSERT INTO results (realDate, effectiveDate, itemid, metricid, status, description) VALUES (%s, %s, %s, %s, %s, %s)""", (rd, rd, item['item'], item['metric'], item['result'], item.get('description', '')))
     dbh.commit()
     cursor.close()
 
