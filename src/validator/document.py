@@ -27,4 +27,12 @@ def check(conditions: dict, doc: dict):
             value = isodate.parse_date(value[0:10])
             result = result and now - condition < value
 
+        if field.startswith('lt:'):
+            value = doc.get(field[3:], '')
+            result = result and value<=int(condition)
+
+        if field.startswith('gt:'):
+            value = doc.get(field[3:], '')
+            result = result and value>=int(condition)
+
     return result

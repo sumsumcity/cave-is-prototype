@@ -1,3 +1,4 @@
+import collector.contrast_sca
 import util
 import json
 import collector.generator
@@ -52,6 +53,8 @@ def collect(config: dict):
         result = collector.jira.run(config)
     if config['type'] == 'contrast_iast':
         result = collector.contrast_iast.run(config)
+    if config['type'] == 'contrast_sca':
+        result = collector.contrast_sca.run(config)
     return result
 
  

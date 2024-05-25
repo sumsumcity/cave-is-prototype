@@ -1,0 +1,22 @@
+{
+    "level": "1",
+    "collector": {
+        "include": "example/collector/contrast_sca-collector.json"
+    },
+    "validator": [
+        {
+            "result": "fail",
+            "prio": 1,
+            "description": "Vulnerable library with grade F is used",
+            "lt:libraries.classes_used": "0"
+        },
+        {
+            "result": "pass",
+            "prio": 3,
+            "description": "No vulnerable library with a grade F is used"
+        }
+    ],
+    "aggregator": {
+        "count": 1
+    }
+}
