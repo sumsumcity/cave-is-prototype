@@ -1,0 +1,11 @@
+{
+    "type": "contrast_iast",
+    "base": "https://app.contrastsecurity.com/Contrast/static/ng/orgid",
+    "verify": false,
+    "headers": {
+        "Authorization": "${CONTRAST_AUTH_HEADER}",
+        "API-Key": "${CONTRAST_API_KEY}",
+        "Accept": "application/json"
+    }
+
+}

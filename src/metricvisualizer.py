@@ -50,6 +50,8 @@ def collect(config: dict):
         result = collector.http.run(config)
     if config['type'] == 'jira':
         result = collector.jira.run(config)
+    if config['type'] == 'contrast_iast':
+        result = collector.contrast_iast.run(config)
     return result
 
  

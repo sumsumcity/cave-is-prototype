@@ -45,6 +45,9 @@ python src/metricvisualizer.py example/config.json
 
 ## Additions
 
+The metrics are from the OWASP DSOVS Framework:
+https://owasp.org/www-project-devsecops-verification-standard/
+
 To delete **all** docker volumes to reset everything (even the passwords):
 ```shell
 docker volume rm $(docker volume ls -q)

@@ -1,0 +1,20 @@
+{
+    "level": "1",
+    "collector": {
+        "include": "example/collector/contrast_iast-collector.json"
+    },
+    "validator": [
+        {
+            "result": "fail",
+            "prio": 1,
+            "description": "Critical vulnerability is present",
+            "str:traces.severity": "Critical",
+            "str:traces.status": "Reported|Suspicious"
+        },
+        {
+            "result": "pass",
+            "prio": 10,
+            "description": "No critical vulnerability"
+        }
+    ]
+}
