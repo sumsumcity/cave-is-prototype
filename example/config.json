@@ -2,6 +2,9 @@
     "items": {
         "APP-1": {
             "include": "example/items/APP-1.json"
+        },
+        "APP-2": {
+            "include": "example/items/APP-2.json"
         }
     },
     "metrics": {
