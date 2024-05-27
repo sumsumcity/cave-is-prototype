@@ -17,6 +17,6 @@
         }
     ],
     "aggregator": {
-        "count": 1
+        "missing": {"result": "pass"}
     }
 }

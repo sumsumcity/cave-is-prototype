@@ -13,15 +13,13 @@ def run(config: dict, itemid: str):
     for id in contrastAppIds:
         url = config['base'] + ENDPOINT_APPLICATION_VULNERABILITY_FILTERING.format(contrastAppId=id)
 
-        response = requests.get(url, headers = config.get('headers'), verify = config.get('verify', False))
+        params = config.get("params","")
+        response = requests.get(url, params=params, headers = config.get('headers'), verify = config.get('verify', False))
         response = response.json()
 
         for res in response['traces']:
             newresponse = { 'type': 'contrast_codeVuln', 'appId': itemid, 'contrastAppId': id, 'traces': {}}
-            newresponse['traces']['severity'] = res['severity']
-            newresponse['traces']['status'] = res['status']
-            newresponse['traces']['instance_uuid'] = res['instance_uuid']
-            newresponse['traces']['sub_title'] = res['sub_title']
+            newresponse['traces'] = res
             newresponse = util.flatten(newresponse)
             result.append(newresponse)
 

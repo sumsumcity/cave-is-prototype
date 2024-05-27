@@ -14,12 +14,13 @@ def run(config: dict, itemid: str):
         url = config['base'] + ENDPOINT_APPLICATIONS + ENDPOINT_APPLICATION_LIBRARY.format(contrastAppId=id)
         url = url + config['params']
 
-        response = requests.get(url, headers = config.get('headers'), verify = config.get('verify', False))
+        params = config.get("params", "")
+        response = requests.get(url, params=params, headers = config.get('headers'), verify = config.get('verify', False))
         response = response.json()
 
         for res in response['libraries']:
             newresponse = { 'type': 'contrast_lib', 'appId': itemid, 'contrastAppId': id, 'libraries': {}}
-            newresponse['libraries']['classes_used'] = res['classes_used']
+            newresponse['libraries'] = res
             newresponse = util.flatten(newresponse)
             result.append(newresponse)
 
