@@ -11,7 +11,11 @@ def loadConfig(file: str):
 def loadEnv(file: dict) -> dict:
     jsonstr = json.dumps(file)
     load_dotenv()
+    jsonstr = jsonstr.replace("${CONFLUENCE_TOKEN}", os.getenv("CONFLUENCE_TOKEN"))
     jsonstr = jsonstr.replace("${MYSQL_PASSWORD}", os.getenv("MYSQL_PASSWORD"))
+    jsonstr = jsonstr.replace("${CONTRAST_AUTH_HEADER}", os.getenv("CONTRAST_AUTH_HEADER"))
+    jsonstr = jsonstr.replace("${CONTRAST_API_KEY}", os.getenv("CONTRAST_API_KEY"))
+    jsonstr = jsonstr.replace("${GITHUB_PAT}", os.getenv("GITHUB_PAT"))
     file = json.loads(jsonstr)
     return file
 
@@ -32,3 +36,13 @@ def dictmap(d: dict, fn):
     for k, v in d.items():
         if isinstance(v, dict):
             dictmap(v, fn)
+
+def flatten(d: dict, s = '.') -> dict:
+    result = {}
+    for k, v in d.items():
+        if isinstance(v, dict):
+            for kk, vv in flatten(v, s).items():
+                result[k + s + kk] = vv
+        else:
+            result[k] = v
+    return result

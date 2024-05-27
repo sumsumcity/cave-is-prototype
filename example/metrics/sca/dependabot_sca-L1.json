@@ -1,0 +1,23 @@
+{
+    "level": "1",
+    "collector": {
+        "include": "example/collector/dependabot_sca-collector.json"
+    },
+    "validator": [
+        {
+            "result": "fail",
+            "prio": 2,
+            "description": "Vulnerable library with severity critical or high is used",
+            "str:response.state": "open",
+            "str:response.security_advisory.severity": "critical|high"
+        },
+        {
+            "result": "pass",
+            "prio": 3,
+            "description": "No vulnerable library with severity critical or high was found"
+        }
+    ],
+    "aggregator": {
+        "count": 1
+    }
+}

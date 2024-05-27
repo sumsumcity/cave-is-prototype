@@ -1,5 +1,8 @@
 {
     "threat_modelling-L1": {
         "include": "example/metrics/threatModel/threatModel-L1.json"
+    },
+    "sca-L1": {
+        "include": "example/metrics/sca/dependabot_sca-L1.json"
     }
 }

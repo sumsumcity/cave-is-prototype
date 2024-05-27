@@ -31,7 +31,8 @@ def getContrastAppIds(config: dict, itemid: str) -> list:
     base = config['base']
     url = base + ENDPOINT_APPLICATIONS
 
-    response = requests.get(url, headers = config.get('headers'), verify = config.get('verify', False))
+    params = config.get("params", "")
+    response = requests.get(url, params=params, headers = config.get('headers'), verify = config.get('verify', False))
     response = response.json()
 
     for d in response["applications"]:

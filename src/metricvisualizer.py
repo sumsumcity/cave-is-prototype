@@ -1,9 +1,11 @@
-import collector.contrast_sca
+import collector.dependabot_sca
 import util
 import json
 import collector.generator
 import collector.http
 import collector.jira
+import collector.contrast_iast
+import collector.contrast_sca
 import serializer.json
 import serializer.mysql
 import validator.document
@@ -24,7 +26,7 @@ def main(config: dict):
 
                 stage = 'collector'
                 stageconfig = metricconfig[stage]
-                stageresult = collect(stageconfig)
+                stageresult = collect(stageconfig, itemid)
 
                 stage = 'validator'
                 stageconfig = metricconfig.get(stage, [])
@@ -43,7 +45,7 @@ def main(config: dict):
 
     serialize(config['serializer'], results)
 
-def collect(config: dict):
+def collect(config: dict, itemid: str):
     result = {}
     if config['type'] == 'generator':
         result = collector.generator.run(config)
@@ -52,9 +54,11 @@ def collect(config: dict):
     if config['type'] == 'jira':
         result = collector.jira.run(config)
     if config['type'] == 'contrast_iast':
-        result = collector.contrast_iast.run(config)
+        result = collector.contrast_iast.run(config, itemid)
     if config['type'] == 'contrast_sca':
-        result = collector.contrast_sca.run(config)
+        result = collector.contrast_sca.run(config, itemid)
+    if config['type'] == 'dependabot_sca':
+        result = collector.dependabot_sca.run(config)
     return result
 
  

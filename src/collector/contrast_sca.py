@@ -12,7 +12,6 @@ def run(config: dict, itemid: str):
 
     for id in contrastAppIds:
         url = config['base'] + ENDPOINT_APPLICATIONS + ENDPOINT_APPLICATION_LIBRARY.format(contrastAppId=id)
-        url = url + config['params']
 
         params = config.get("params", "")
         response = requests.get(url, params=params, headers = config.get('headers'), verify = config.get('verify', False))
