@@ -1,0 +1,10 @@
+{
+    "type": "codeql_sast",
+    "base": "https://api.github.com/repos/sumsumcity/webgoatOutdated",
+    "params": {"per_page": 5000},
+    "verify": false,
+    "headers": {
+        "Authorization": "Bearer ${GITHUB_PAT}"
+    }
+
+}

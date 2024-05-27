@@ -1,3 +1,4 @@
+import collector.codeql_sast
 import collector.dependabot_sca
 import util
 import json
@@ -59,6 +60,8 @@ def collect(config: dict, itemid: str):
         result = collector.contrast_sca.run(config, itemid)
     if config['type'] == 'dependabot_sca':
         result = collector.dependabot_sca.run(config)
+    if config['type'] == 'codeql_sast':
+        result = collector.codeql_sast.run(config)
     return result
 
  

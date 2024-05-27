@@ -4,5 +4,8 @@
     },
     "sca-L1": {
         "include": "example/metrics/sca/dependabot_sca-L1.json"
+    },
+    "sast-L1": {
+        "include": "example/metrics/sast/codeql_sast-L1.json"
     }
 }
