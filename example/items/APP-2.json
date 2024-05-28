@@ -16,5 +16,10 @@
             "include": "example/collector/codeql_sast-collector.json",
             "base": "https://api.github.com/repos/sumsumcity/cave"
         }
+    },
+    "security_issue_tracking_desing-L1": {
+        "collector": {
+            "include": "example/collector/jira-collector.json"
+        }
     }
 }

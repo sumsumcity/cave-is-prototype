@@ -9,10 +9,8 @@ def run(config: dict):
 
     url = base + ENDPOINT_SEARCH
     params = { 'jql': config['jql'], 'expand': 'names' }
-
     response = requests.get(url, params = params, headers = config.get('headers'), verify = config.get('verify', False))
     response = response.json()
-
     fields = response['names']
 
     result = []

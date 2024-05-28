@@ -13,5 +13,10 @@
         "collector": {
             "include": "example/collector/codeql_sast-collector.json"
         }
+    },
+    "security_issue_tracking_desing-L1": {
+        "collector": {
+            "include": "example/collector/jira-collector.json"
+        }
     }
 }

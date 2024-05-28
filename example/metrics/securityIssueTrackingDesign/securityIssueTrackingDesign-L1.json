@@ -1,0 +1,20 @@
+{
+    "level": "1",
+    "validator": [
+        {
+            "result": "pass",
+            "prio": 1,
+            "description": "Jira Ticket with all requirements is present",
+            "str:issue.summary": "Issue regarding",
+            "date:issue.created": "P1Y"
+        },
+        {
+            "result": "fail",
+            "description": "No Jira ticket",
+            "prio": 10
+        }
+    ],
+    "aggregator": {
+        "count": 1
+    }
+}
