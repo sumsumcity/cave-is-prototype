@@ -1,7 +1,17 @@
 {
-    "threat_modeling-L1": {
+    "threat_modelling-L1": {
         "collector": {
-            "url": "https://example.edu/"
+            "include": "example/collector/http-collector.json"
+        }
+    },
+    "sca-L1": {
+        "collector": {
+            "include": "example/collector/dependabot_sca-collector.json"
+        }
+    },
+    "sast-L1": {
+        "collector": {
+            "include": "example/collector/codeql_sast-collector.json"
         }
     }
 }

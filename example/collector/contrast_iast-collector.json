@@ -1,5 +1,6 @@
 {
     "type": "contrast_iast",
+    "appid": "APP-1",
     "base": "https://app.contrastsecurity.com/Contrast/static/ng/orgid",
     "verify": false,
     "headers": {

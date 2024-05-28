@@ -1,8 +1,5 @@
 {
     "level": "1",
-    "collector": {
-        "include": "example/collector/dependabot_sca-collector.json"
-    },
     "validator": [
         {
             "result": "fail",
@@ -18,6 +15,6 @@
         }
     ],
     "aggregator": {
-        "count": 1
+        "missing": {"result": "pass", "description": "There are no dependabots alerts"}
     }
 }

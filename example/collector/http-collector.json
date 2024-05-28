@@ -1,8 +1,10 @@
 {
     "type": "http",
-    "url": "https://example.edu/",
+    "url": "https://sumsumcity.atlassian.net/wiki/spaces/~7120207e7efd6d002e4139b588c02be762c850/pages/622593/Threat+Model+APP+1",
     "verify": false,
+    "dateregex": "Date: ([0-9.]+)",
+    "dateformat": "%d.%m.%Y",
     "headers": {
-        "Cookie": "test-cookie"
+        "Cookie": "tenant.session.token=eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNTkyODU4Mzk0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI3MTIwMjA6N2U3ZWZkNmQtMDAyZS00MTM5LWI1ODgtYzAyYmU3NjJjODUwIiwiZW1haWxEb21haW4iOiJob3RtYWlsLmNvbSIsImltcGVyc29uYXRpb24iOltdLCJjcmVhdGVkIjoxNzE2ODQwMzM0LCJyZWZyZXNoVGltZW91dCI6MTcxNjkxOTEyOSwidmVyaWZpZWQiOnRydWUsImlzcyI6InNlc3Npb24tc2VydmljZSIsInNlc3Npb25JZCI6ImYzMzRjNzE3LWNiYzItNDlmMC1hMDViLTEyZTVlYjZiZjc2ZCIsInN0ZXBVcHMiOltdLCJhdWQiOiJhdGxhc3NpYW4iLCJuYmYiOjE3MTY5MTg1MjksImV4cCI6MTcxOTUxMDUyOSwiaWF0IjoxNzE2OTE4NTI5LCJlbWFpbCI6InJhZmZpX3dhZXNwaUBob3RtYWlsLmNvbSIsImp0aSI6ImYzMzRjNzE3LWNiYzItNDlmMC1hMDViLTEyZTVlYjZiZjc2ZCJ9.wyjNvy7dzMQO-9MtxegpZFNyz1OJ4MQb_jQdAFKoNfyCg9OWoYsDmQLraU7UN0ZsGxkSfuL-OK4MsJh5vtqYe6XYBio-nd4xFXA5Rb88eTXaih01ubuvgQsQupMgwIR428becX9L0-K2spjw2SGlXRk2O-qNCpeTfmC932UEhH4Eq2yjVgQSHRUFTmfFjtpdlIWRAnfWC38fy_CosklR-euR7nQTKR8Lqej2q3NPfzcmTlFXVeODK4zVg918QW-JTXJqP6UaDDTTy40FU92DDVmFpfTgRShv8sMBm4tdyF1jV1ippegsMjabHtWeDmnzaJCqU6BSPn9wiE8gJN4YGA"
     }
 }

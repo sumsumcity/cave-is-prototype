@@ -1,31 +1,20 @@
 {
-    "sast-L1": {
-        "level": "1",
+    "threat_modelling-L1": {
         "collector": {
-            "type": "codeql_sast",
-            "base": "https://api.github.com/repos/sumsumcity/cave",
-            "params": {"per_page": 5000},
-            "verify": false,
-            "headers": {
-                "Authorization": "Bearer ${GITHUB_PAT}"
-            }
-        },
-        "validator": [
-            {
-                "result": "fail",
-                "prio": 2,
-                "description": "Critical vulnerability is present",
-                "str:response.state": "open",
-                "str:response.rule.security_severity_level": "critical|high"
-            },
-            {
-                "result": "pass",
-                "prio": 3,
-                "description": "No critical vulnerability"
-            }
-        ],
-        "aggregator": {
-            "missing": {"result": "pass", "description": "CodeQL found no vulnerability"}
+            "include": "example/collector/http-collector.json",
+            "url": "https://sumsumcity.atlassian.net/wiki/spaces/~7120207e7efd6d002e4139b588c02be762c850/pages/622603/Threat+Model+APP-2"
+        }
+    },
+    "sca-L1": {
+        "collector": {
+            "include": "example/collector/dependabot_sca-collector.json",
+            "base": "https://api.github.com/repos/sumsumcity/cave"
+        }
+    },
+    "sast-L1": {
+        "collector": {
+            "include": "example/collector/codeql_sast-collector.json",
+            "base": "https://api.github.com/repos/sumsumcity/cave"
         }
     }
 }

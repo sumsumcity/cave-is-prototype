@@ -1,8 +1,5 @@
 {
     "level": "1",
-    "collector": {
-        "include": "example/collector/http-collector.json"
-    },
     "validator": [
         {
             "result": "pass",
@@ -14,7 +11,7 @@
         {
             "result": "fail",
             "prio": 10,
-            "description": "No threat model"
+            "description": "The date of the threat model is outdated"
         }
     ],
     "aggregator": {

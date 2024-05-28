@@ -27,7 +27,7 @@ def main(config: dict):
 
                 stage = 'collector'
                 stageconfig = metricconfig[stage]
-                stageresult = collect(stageconfig, itemid)
+                stageresult = collect(stageconfig)
 
                 stage = 'validator'
                 stageconfig = metricconfig.get(stage, [])
@@ -46,7 +46,7 @@ def main(config: dict):
 
     serialize(config['serializer'], results)
 
-def collect(config: dict, itemid: str):
+def collect(config: dict):
     result = {}
     if config['type'] == 'generator':
         result = collector.generator.run(config)
@@ -55,9 +55,9 @@ def collect(config: dict, itemid: str):
     if config['type'] == 'jira':
         result = collector.jira.run(config)
     if config['type'] == 'contrast_iast':
-        result = collector.contrast_iast.run(config, itemid)
+        result = collector.contrast_iast.run(config)
     if config['type'] == 'contrast_sca':
-        result = collector.contrast_sca.run(config, itemid)
+        result = collector.contrast_sca.run(config)
     if config['type'] == 'dependabot_sca':
         result = collector.dependabot_sca.run(config)
     if config['type'] == 'codeql_sast':

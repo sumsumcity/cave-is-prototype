@@ -1,8 +1,5 @@
 {
     "level": "1",
-    "collector": {
-        "include": "example/collector/contrast_iast-collector.json"
-    },
     "validator": [
         {
             "result": "fail",

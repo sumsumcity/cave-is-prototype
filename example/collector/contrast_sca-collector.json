@@ -1,5 +1,6 @@
 {
     "type": "contrast_sca",
+    "appid": "APP-1",
     "base": "https://app.contrastsecurity.com/Contrast/static/ng/orgid",
     "params": {"quickFilter": "VULNERABLE", "grades": ["F"]},
     "verify": false,

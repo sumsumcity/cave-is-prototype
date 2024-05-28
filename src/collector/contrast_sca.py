@@ -5,8 +5,10 @@ import json
 ENDPOINT_APPLICATIONS = '/applications'
 ENDPOINT_APPLICATION_LIBRARY = '/{contrastAppId}/libraries/filter'
 
-def run(config: dict, itemid: str):
+def run(config: dict):
     result = []
+
+    itemid = config["appid"]
 
     contrastAppIds = getContrastAppIds(config, itemid)
 
