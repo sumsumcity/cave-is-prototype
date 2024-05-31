@@ -6,7 +6,7 @@
         "include": "example/metrics/sca/sca-L1.json"
     },
     "sast-L1": {
-        "include": "example/metrics/sast/codeql_sast-L1.json"
+        "include": "example/metrics/sast/sast-L1.json"
     },
     "security_issue_tracking_desing-L1": {
         "include": "example/metrics/securityIssueTrackingDesign/securityIssueTrackingDesign-L1.json"

@@ -58,6 +58,8 @@ https://docs.github.com/en/rest/dependabot/alerts?apiVersion=2022-11-28#about-de
 ### CodeQL Collector
 https://docs.github.com/en/rest/code-scanning/code-scanning?apiVersion=2022-11-28#about-code-scanning
 
+It is not possible to obtain multiple severity levels in one request. The configuration of the severity levels in the validator is therefore very important.
+
 
 ## Example
 ```shell
@@ -68,8 +70,26 @@ python src/metricvisualizer.py example/config.json
 The metrics are from the OWASP DSOVS Framework:
 https://owasp.org/www-project-devsecops-verification-standard/
 
-### SCA
+### sca
+https://github.com/OWASP/www-project-devsecops-verification-standard/blob/main/document/CODE-005-Software-Composition-Analysis-SCA.md
 Possible Collectors: contrast_sca-collector, dependabot_sca-collector
+
+### iast
+https://github.com/OWASP/www-project-devsecops-verification-standard/blob/main/document/TEST-003-Interactive-Application-Securit-Testing-IAST.md
+Possible Collectors: contrast_iast-collector
+
+### sast
+https://github.com/OWASP/www-project-devsecops-verification-standard/blob/main/document/CODE-004-Static-Application-Security-Testing-SAST.md
+Possible Collectors: codeql_sast-collector
+
+### threatModel
+https://github.com/OWASP/www-project-devsecops-verification-standard/blob/main/document/DES-002-Threat-Modelling.md
+Possible Collectors: http-collector (e.g. confluence or other websites)
+
+### securityIssueTrackingDesign
+https://github.com/OWASP/www-project-devsecops-verification-standard/blob/main/document/REQ-004-Security-Issues-Tracking.md
+Possible Collectors: (jira-collector)
+
 
 
 
