@@ -3,10 +3,8 @@
     "validator": [
         {
             "result": "fail",
-            "prio": 2,
-            "description": "Vulnerable library with severity critical or high is used",
-            "str:response.state": "open",
-            "str:response.security_advisory.severity": "critical|high"
+            "prio": 1,
+            "description": "Vulnerable library with severity critical or high is used"
         },
         {
             "result": "pass",

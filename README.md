@@ -38,15 +38,42 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## Collector Possibilities
+
+### HTTP Collector (works also for Confluence)
+GET Requests
+
+### JIRA Collector
+https://developer.atlassian.com/server/jira/platform/rest-apis/
+
+### Contrast IAST Collector
+https://github.com/Contrast-Security-OSS/contrast-teamserver-api-docs/tree/main/saas-restapi-v3
+
+### Contrast SCA Collector
+https://github.com/Contrast-Security-OSS/contrast-teamserver-api-docs/tree/main/saas-restapi-v3
+
+### Dependabot Collector
+https://docs.github.com/en/rest/dependabot/alerts?apiVersion=2022-11-28#about-dependabot-alerts
+
+### CodeQL Collector
+https://docs.github.com/en/rest/code-scanning/code-scanning?apiVersion=2022-11-28#about-code-scanning
+
+
 ## Example
 ```shell
 python src/metricvisualizer.py example/config.json
 ```
 
-## Additions
-
+## Example Metrics
 The metrics are from the OWASP DSOVS Framework:
 https://owasp.org/www-project-devsecops-verification-standard/
+
+### SCA
+Possible Collectors: contrast_sca-collector, dependabot_sca-collector
+
+
+
+## Additions
 
 To delete **all** docker volumes to reset everything (even the passwords):
 ```shell

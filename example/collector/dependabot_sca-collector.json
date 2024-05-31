@@ -1,7 +1,7 @@
 {
     "type": "dependabot_sca",
     "base": "https://api.github.com/repos/sumsumcity/webgoatOutdated",
-    "params": {"per_page": 5000},
+    "params": {"per_page": 5000, "state": "open", "severity": "critical|high"},
     "verify": false,
     "headers": {
         "Authorization": "Bearer ${GITHUB_PAT}"
