@@ -4,7 +4,7 @@
         {
             "result": "pass",
             "prio": 1,
-            "description": "Jira Ticket with all requirements is present",
+            "description": "Jira Ticket present: {vars[title]}",
             "str:issue.summary": "Issue regarding",
             "date:issue.created": "P1Y"
         },

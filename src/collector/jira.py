@@ -11,7 +11,8 @@ def run(config: dict):
     params = { 'jql': config['jql'], 'expand': 'names' }
     response = requests.get(url, params = params, headers = config.get('headers'), verify = config.get('verify', False))
     response = response.json()
-    fields = response['names']
+
+    fields = response.get('names', {})
 
     result = []
 

@@ -15,6 +15,7 @@
         "host": "127.0.0.1",
         "database": "caveDB",
         "port": 3306,
+        "output": "debug.json",
         "include": "example/auth-mysql.json"
     }
 }

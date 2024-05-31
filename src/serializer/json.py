@@ -8,7 +8,7 @@ def run(config: dict, data: list):
 
 def runonce(fp, item: dict):
     out = {}
-    for k in ["item", "metric", "result", "title"]:
+    for k in ["item", "metric", "result", "description"]:
         out[k] = item[k]
 
     json.dump(out, fp)

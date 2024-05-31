@@ -4,7 +4,7 @@
         {
             "result": "fail",
             "prio": 1,
-            "description": "Vulnerable library with grade F is used",
+            "description": "Vulnerable library with grade F: {vars[libraries.file_name]}",
             "lt:libraries.classes_used": "0"
         },
         {
@@ -14,6 +14,6 @@
         }
     ],
     "aggregator": {
-        "missing": {"result": "pass"}
+        "missing": {"result": "pass", "description": "There is no library"}
     }
 }

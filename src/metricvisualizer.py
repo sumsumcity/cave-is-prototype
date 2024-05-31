@@ -1,6 +1,7 @@
 import collector.codeql_sast
 import collector.dependabot_sca
 import util
+import traceback
 import json
 import collector.generator
 import collector.http
@@ -19,8 +20,9 @@ def main(config: dict):
     results = []
     for itemid, itemconfig in config['items'].items():
         for metricid, metrictemplate in config['metrics'].items():
-            stage = 'init'
+            stage = 'initialize'
             stageresult = {}
+
             try:
                 metricconfig = metrictemplate.copy()
                 metricconfig.update(itemconfig.get(metricid, {}))
@@ -36,12 +38,18 @@ def main(config: dict):
                 stage = 'aggregator'
                 stageconfig = metricconfig.get(stage, {})
                 stageresult = aggregate(stageconfig, stageresult)
-            except Exception as e:
-                stageresult.update(DEFAULT_ERROR)
-                stageresult['description'] = f'{type(e).__name__} in {stage} stage: {e}'
 
-            stageresult['item'] = itemid
-            stageresult['metric'] = metricid
+                stage = 'finalize'
+                stageresult['description'] = stageresult.get('description','').format(vars = stageresult)
+            except Exception as e:
+                estr = ''.join(traceback.TracebackException.from_exception(e).format())
+                stageresult.update(DEFAULT_ERROR)
+                stageresult['description'] = f'{repr(e)} in {stage} stage\n{estr}'
+            
+            finally:
+                stageresult['item'] = itemid
+                stageresult['metric'] = metricid
+
             results.append(stageresult)
 
     serialize(config['serializer'], results)

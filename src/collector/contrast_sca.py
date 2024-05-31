@@ -22,6 +22,7 @@ def run(config: dict):
         for res in response['libraries']:
             newresponse = { 'type': 'contrast_lib', 'appId': itemid, 'contrastAppId': id, 'libraries': {}}
             newresponse['libraries'] = res
+            newresponse['title'] = res['file_name']
             newresponse = util.flatten(newresponse)
             result.append(newresponse)
 

@@ -22,6 +22,7 @@ def run(config: dict):
         for res in response['traces']:
             newresponse = { 'type': 'contrast_codeVuln', 'appId': itemid, 'contrastAppId': id, 'traces': {}}
             newresponse['traces'] = res
+            newresponse['title'] = res['sub_title']
             newresponse = util.flatten(newresponse)
             result.append(newresponse)
 

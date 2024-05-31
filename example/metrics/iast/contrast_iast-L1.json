@@ -13,5 +13,8 @@
             "prio": 10,
             "description": "No critical vulnerability"
         }
-    ]
+    ],
+    "aggregator": {
+        "count": 1
+    }
 }
